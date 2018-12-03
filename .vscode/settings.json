@@ -1,9 +1,0 @@
-{
-  "python.pythonPath": "/Users/macklinu/.local/share/virtualenvs/advent-of-code-2018-p8VhEQI3/bin/python",
-  "python.formatting.provider": "black",
-  "python.unitTest.pyTestArgs": ["."],
-  "python.unitTest.unittestEnabled": false,
-  "python.unitTest.nosetestsEnabled": false,
-  "python.unitTest.pyTestEnabled": true,
-  "python.linting.mypyEnabled": true
-}
