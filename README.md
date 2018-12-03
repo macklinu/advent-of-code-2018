@@ -21,3 +21,7 @@ This will install all necessary dependencies for tests, linting, and anything th
 ### `bin/check`
 
 After installing dependencies, you can then run this command to run the tests and type checking. Exits with a non-zero code if either tests or type checking fails; otherwise, exits with zero.
+
+### `bin/python`
+
+This is a helpful script to open up a Python REPL with the installed dependencies and using the desired version of Python (3.7).
