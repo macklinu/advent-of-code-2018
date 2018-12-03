@@ -2,6 +2,8 @@
 
 > Solutions to [Advent of Code 2018](https://adventofcode.com/2018) written in Python
 
+[![Build Status](https://travis-ci.org/macklinu/advent-of-code-2018.svg?branch=master)](https://travis-ci.org/macklinu/advent-of-code-2018)
+
 ## Setup
 
 Install [pipenv](https://pipenv.readthedocs.io/en/latest/install/). For example, on a Mac:
