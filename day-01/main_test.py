@@ -1,15 +1,9 @@
-import os
-from typing import List
+from pathlib import Path
 import pytest
 from main import frequency, frequency_reached_twice
 
 
-with open(os.path.join(os.getcwd(), "day-01", "input.txt"), "r") as myfile:
-    input = myfile.read()
-
-
-def list_to_string(l: List[str]) -> str:
-    return "\n".join(l)
+input = Path("day-01/input.txt").read_text()
 
 
 @pytest.mark.parametrize(
@@ -21,7 +15,7 @@ def list_to_string(l: List[str]) -> str:
     ],
 )
 def test_part_one_examples(i, o):
-    assert frequency(list_to_string(i)) == o
+    assert frequency("\n".join(i)) == o
 
 
 def test_part_one_solution():
@@ -38,7 +32,7 @@ def test_part_one_solution():
     ],
 )
 def test_part_two_examples(i, o):
-    assert frequency_reached_twice(list_to_string(i)) == o
+    assert frequency_reached_twice("\n".join(i)) == o
 
 
 def test_part_two_answer():
