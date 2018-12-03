@@ -1,7 +1,6 @@
 from itertools import cycle, accumulate
 from typing import List
 import operator
-import pdb
 
 
 def frequency(input: str) -> int:
