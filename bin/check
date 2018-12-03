@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-pipenv run pytest
-pipenv run mypy --ignore-missing-imports day-**/*.py
+pipenv run pytest && pipenv run mypy --ignore-missing-imports day-**/*.py
