@@ -16,3 +16,6 @@ def checksum(input: str) -> int:
 
     return checksum_dict[2] * checksum_dict[3]
 
+
+def common_letters(input: str) -> str:
+    return ""
