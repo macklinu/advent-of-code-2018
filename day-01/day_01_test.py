@@ -1,6 +1,6 @@
 from pathlib import Path
 import pytest
-from main import frequency, frequency_reached_twice
+from day_01 import frequency, frequency_reached_twice
 
 
 input = Path("day-01/input.txt").read_text()
