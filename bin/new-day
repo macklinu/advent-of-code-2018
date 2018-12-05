@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+number_regex="^[0-3][0-9]$"
+if ! [[ $1 =~ $number_regex ]] ; then
+  echo "Must supply number argument (with leading zero if less than 10)"
+  exit 1
+fi
+
+directory="day-$1"
+
+echo "Creating $directory boilerplate"
+mkdir -p "$directory"
+touch "$directory/day_$1.py"
+touch "$directory/day_$1_test.py"
+touch "$directory/input.txt"
+
+echo "Done 😎"

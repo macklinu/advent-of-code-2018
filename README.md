@@ -18,6 +18,16 @@ $ brew install pipenv
 
 This will install all necessary dependencies for tests, linting, and anything that may be used in the Advent of Code solution source (trying to stick to stdlib modules as much as possible).
 
+### `bin/new-day`
+
+This script creates the boilerplate for a new day of Advent of Code. Execute like so:
+
+```sh
+$ bin/new-day 03
+Creating day-03 boilerplate
+Done 😎
+```
+
 ### `bin/check`
 
 After installing dependencies, you can then run this command to run the tests and type checking. Exits with a non-zero code if either tests or type checking fails; otherwise, exits with zero.
