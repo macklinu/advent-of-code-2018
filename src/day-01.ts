@@ -1,4 +1,38 @@
--10
+import { cycle } from './utils'
+
+export function frequency(input: string): number {
+  return input.split('\n').reduce((val, str) => getMath(str)(val), 0)
+}
+
+const getMath = (str: string) => {
+  let operator = str.slice(0, 1)
+  let value = Number(str.slice(1))
+  switch (operator) {
+    case '+':
+      return (x: number) => x + value
+    case '-':
+      return (x: number) => x - value
+    default:
+      throw new TypeError(`Unknown operator '${operator}'`)
+  }
+}
+
+export function frequencyReachedTwice(input: string): number {
+  let value = 0
+  let seen = new Set<number>([0])
+
+  for (let n of cycle(input.split('\n'))) {
+    value = getMath(n)(value)
+    if (seen.has(value)) {
+      break
+    }
+    seen.add(value)
+  }
+
+  return value
+}
+
+export const input = `-10
 +18
 +5
 +1
@@ -1013,4 +1047,4 @@
 -7
 -17
 -13
-+73906
++73906`
