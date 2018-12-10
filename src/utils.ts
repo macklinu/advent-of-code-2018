@@ -8,3 +8,11 @@ export function* cycle<T>(array: T[]): IterableIterator<T> {
     }
   }
 }
+
+export function count(string: string): { [char: string]: number } {
+  let map: { [char: string]: number } = {}
+  for (let s of string) {
+    map[s] = (map[s] || 0) + 1
+  }
+  return map
+}

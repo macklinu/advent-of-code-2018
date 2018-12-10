@@ -1,4 +1,8 @@
-import { cycle } from './utils'
+import { count, cycle } from './utils'
+
+test('count()', () => {
+  expect(count('ababca')).toEqual({ a: 3, b: 2, c: 1 })
+})
 
 test('cycle()', () => {
   let iterator = cycle([2, 4, 6])

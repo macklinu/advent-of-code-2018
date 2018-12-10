@@ -1,4 +1,23 @@
-auxwcbzrmdvpsjfgkrthnkioqm
+import { count } from './utils'
+
+export function checksum(input: string): number {
+  let counts: { [count: string]: number } = input.split('\n').reduce(
+    (dict, str) => {
+      let countSet = new Set(Object.values(count(str)))
+      if (countSet.has(2)) {
+        dict[2]++
+      }
+      if (countSet.has(3)) {
+        dict[3]++
+      }
+      return dict
+    },
+    { 2: 0, 3: 0 }
+  )
+  return counts[2] * counts[3]
+}
+
+export const input = `auxwcbzrmdvpsjfgkrthnkioqm
 auxwcbzrmdvpsjfgbltonyijqe
 auxwcbzrmdfpsefgklthnoioqe
 auxwcbzrmdvpsjfgkluhnjisqe
@@ -247,4 +266,4 @@ yuxwcbzrmdvpsjggklthnlioqe
 auxwcbzradvpsjftklthoyioqe
 auxwcbzrmdvjujfgklmhnyioqe
 auxwcbzrmdvpsrfgklpinyioqe
-auxwobzrvqvpsjfgklthnyioqe
+auxwobzrvqvpsjfgklthnyioqe`
