@@ -1,4 +1,5 @@
 import { count } from './utils'
+import * as assert from 'assert'
 
 export function checksum(input: string): number {
   let counts: { [count: string]: number } = input.split('\n').reduce(
@@ -15,6 +16,58 @@ export function checksum(input: string): number {
     { 2: 0, 3: 0 }
   )
   return counts[2] * counts[3]
+}
+
+export function commonLetters(input: string): string {
+  let ids = input.split('\n')
+  let smallestDiff = Number.MAX_VALUE
+  let diffTuple: [string, string] = ['', '']
+  for (let [a, b] of product(ids, ids)) {
+    let diff = countDifferences(a, b)
+    if (diff < smallestDiff) {
+      smallestDiff = diff
+      diffTuple = [a, b]
+    }
+  }
+  return buildCommonString.apply(null, diffTuple)
+}
+
+function* product<T>(a: T[], b: T[]): IterableIterator<[T, T]> {
+  let seen = new Set<T>()
+  for (let i of a) {
+    for (let j of b) {
+      if (seen.has(j) || i === j) {
+        continue
+      }
+      yield [i, j]
+      seen.add(i)
+    }
+  }
+}
+
+function countDifferences(left: string, right: string): number {
+  assert.ok(
+    left.length === right.length,
+    'Input strings must be the same length'
+  )
+  let n = 0
+  for (let i = 0; i < left.length; i++) {
+    if (left[i] === right[i]) {
+      continue
+    }
+    n++
+  }
+  return n
+}
+
+function buildCommonString(left: string, right: string): string {
+  let output = ''
+  for (let i = 0; i < left.length; i++) {
+    if (left[i] === right[i]) {
+      output += left[i]
+    }
+  }
+  return output
 }
 
 export const input = `auxwcbzrmdvpsjfgkrthnkioqm
