@@ -2,8 +2,6 @@
 
 > Solutions to [Advent of Code 2018](https://adventofcode.com/2018) written in TypeScript
 
-[![Build Status](https://travis-ci.org/macklinu/advent-of-code-2018.svg?branch=master)](https://travis-ci.org/macklinu/advent-of-code-2018)
-
 ## Setup
 
 Install [yarn](https://yarnpkg.com/en/). For example, on a Mac:

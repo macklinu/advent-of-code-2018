@@ -2,7 +2,7 @@ import { count } from './utils'
 import * as assert from 'assert'
 
 export function checksum(input: string): number {
-  let counts: { [count: string]: number } = input.split('\n').reduce(
+  let counts = input.split('\n').reduce(
     (dict, str) => {
       let countSet = new Set(Object.values(count(str)))
       if (countSet.has(2)) {
